@@ -1,8 +1,16 @@
 body {
+    font-family: Garamond, serif;
     background-color: #023c1d;
+    margin: 0;
+    padding: 20px;
 }
 
-h1 p {
-    font-family: Garamond, serif;
+.title {
+    text-align: center;
+    color: #ffebf3;
+}
+
+.text {
+    text-align: center;
     color: #ffebf3;
 }

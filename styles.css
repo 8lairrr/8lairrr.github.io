@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&display=swap');
 
+/* forcing colors on all color modes */
+@media (prefers-color-scheme: dark), (forced-colors: active) {
+    body, html, .welcome-screen, .info-section, .skills-section, .project, .bottom-nav {
+        background-color: #F0ECDC !important;
+        color: #1E1E24 !important;
+    }
+
+    /* Also force links and buttons */
+    a, a:visited, a:hover, button {
+        color: #1E1E24 !important;
+        background-color: #77b0d4d3 !important;
+    }
+
+    /* Override forced high-contrast borders/shadows */
+    * {
+        border-color: inherit !important;
+        box-shadow: none !important;
+    }
+}
+
 .inclusive-sans-regular {
     font-family: "Inclusive Sans", sans-serif;
     font-optical-sizing: auto;

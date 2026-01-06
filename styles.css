@@ -46,6 +46,10 @@ body {
     background-color: #F0ECDC;
     display: flex;
     justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
 }
 
 .welcome-text {
@@ -72,9 +76,22 @@ body {
     color: #1E1E24;
 }
 
-.welcome-screen video {
+#picture-loop {
+    max-width: 400px;
     width: 50%;
-}  
+    aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: playVideoLoop 4s infinite;
+}
+
+@keyframes playVideoLoop {
+    0%, 24% { background-image: url('assets/1.png'); }
+    25%, 49% { background-image: url('assets/2.png'); }
+    50%, 74% { background-image: url('assets/3.png'); }
+    75%, 100% { background-image: url('assets/4.png'); }
+}
 
 hr {
     border-top: 2px solid #8AB488;

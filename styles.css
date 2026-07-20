@@ -1194,7 +1194,8 @@ hr {
 }
     
 .contact {
-    margin-top: 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
     padding-top: 0;
     font-family: "Inclusive Sans", sans-serif;
     color: #1E1E24;

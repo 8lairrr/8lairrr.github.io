@@ -143,6 +143,36 @@
 
     <hr>
 
+    <div class="project">
+        <div class="project-images">
+            <div class="row-one">
+                <img src="assets/project-imgs/engagement-top.png">
+                <img src="assets/project-imgs/engagement-bottom.png">
+            </div>
+            <div class="row-two">
+                <img src="assets/project-imgs/performance.png">
+            </div>
+        </div>
+        <div class="project-content">
+            <div class="section-title">
+                <img class="star" src="assets/star.png">
+                <h1>01</h1>
+            </div>
+            <h2>AI Traffic Reporting Project</h2>
+            <div class="project-labels">
+                <h3>Full Stack Development</h3>
+            </div>
+            <p>
+                At RentVision, I completed the AI Traffic Reporting Project with another intern,
+                with the goals of helping RentVision's clients understand how AI tools were directing
+                potential customers to their community's websites. I created two tabs and their data using
+                TypeScript and Java.
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
     <div class="projects-section">
         <div class="project">
             <div class="project-images">
@@ -158,12 +188,11 @@
             <div class="project-content">
                 <div class="section-title">
                     <img class="star" src="assets/star.png">
-                    <h1>01</h1>
+                    <h1>02</h1>
                 </div>
                 <h2>UX Engineer - Reach</h2>
                 <div class="project-labels">
-                    <h3>UI Design</h3>
-                    <h3>Accessible UX</h3>
+                    <h3>UI/UX Design</h3>
                     <h3>Mobile Development</h3>
                 </div>
                 <p>
@@ -183,55 +212,41 @@
                 </div>
             </div>
         </div>
-
-        <hr>
-
-        <div class="project">
-            <div class="project-images">
-                <div class="row-one">
-                    <img src="assets/project-imgs/pomodoro-home.png">
-                    <img src="assets/project-imgs/pomodoro-mockup.png">
-                </div>
-                <div class="row-two">
-                    <img src="assets/project-imgs/pomodoro-colors.png">
-                    <img src="assets/project-imgs/pomodoro-timer.png">
-                </div>
-            </div>
-            <div class="project-content">
-                <div class="section-title">
-                    <img class="star" src="assets/star.png">
-                    <h1>02</h1>
-                </div>
-                <h2>Pomodoro Widget</h2>
-                <div class="project-labels">
-                    <h3>App Development</h3>
-                    <h3>UI Design</h3>
-                    <h3>Electron Development</h3>
-                </div>
-                <p>
-                    The Pomodoro Widget is a minimalist, desktop timer built as 
-                    an Electron app with React and Vite. Inspired by the Pomodoro 
-                    technique, it helps users manage focused work sessions and 
-                    breaks with a distraction-free floating widget. Designed 
-                    to stay on top, blend into the desktop, and look aesthetically 
-                    cohesive, the widget is lightweight and fully cross-platform.
-                </p>
-
-                <div class="project-links">
-                    <a href="https://www.figma.com/design/9HMapNtwKzcOVEZ5BFHo7Z/pomodoro-widget?node-id=0-1&p=f" target="_blank">
-                        <button>Figma</button>
-                    </a>
-                    <a href="https://github.com/8lairrr/pomodoro-timer" target="_blank">
-                        <button>Github</button>
-                    </a>
-                </div>
-            </div>
-        </div>
         
         <div class="bottom-nav">
             <img src="assets/logo.png">
             <a href="#"><h3>back to top</h3></a>
         </div>
     </div>
+
+    <div id="image-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img" alt="Enlarged project screenshot">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            const closeBtn = document.querySelector('.modal-close');
+
+            document.querySelectorAll('.project-images img').forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.style.display = 'flex';
+                    modalImg.src = img.src;
+                });
+            });
+
+            const closeModal = () => { modal.style.display = 'none'; };
+            
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModal();
+            });
+        });
+    </script>
 </body>
 </html>
